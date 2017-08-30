@@ -1,0 +1,8 @@
+{
+  "name": "demo-crm-app",
+  "app_id": "a52d8df2",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

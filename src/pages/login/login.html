@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      App
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar color="light">
+    <ion-title>
+      Login
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <form [formGroup]="loginForm" >
+        <ion-item>
+          <ion-label color="primary" floating>Email adress</ion-label>
+        <ion-input formControlName="email" (blur)="log(loginForm)" value="a@a.com"></ion-input>
+
+        </ion-item>
+        <div *ngIf="email.touched && email.invalid">
+          <span item-start  class="alert alert-error" style="margin-left: 15px;">Email is required </span>
+          <div *ngIf="email.errors.EmailValidity">
+            <span item-start  class="alert alert-error" style="margin-left: 15px;">Not a valid email</span>
+          
+          </div>
+        </div>
+        <ion-item>
+          <ion-label color="primary" floating>Password</ion-label>
+          <ion-input formControlName="password" value ="a"></ion-input>
+        </ion-item>
+
+        <div class="row" style="margin-top:10px;margin-left:13px">
+          <div >
+            <button type ="submit" ion-button [disabled] = "!loginForm.valid" side="right"  (click)="submit(loginForm.value)">LOGIN
+            </button>
+          </div>
+       
+          <h2 style="margin-left: 10px; margin-top:10px;margin-right: 10px;">OR</h2>
+          <div text-right>
+            <button ion-button (click)="clicked()">SignUp
+            </button>
+          </div>
+        </div>
+      </form>  
+
+     
+</ion-content>  

@@ -1,0 +1,59 @@
+<!--
+  Generated template for the NewvotePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+     <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>New vote</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="newVoteForm" (ngSubmit)="submit(newVoteForm.value)">
+    <ion-item>
+      <ion-label color="primary" floating>Member Name</ion-label>
+      <ion-input formControlName="name" (blur)="log(newVoteForm)"></ion-input>
+      
+    </ion-item>
+    <div *ngIf="name.touched && name.invalid">
+        <span item-start  class="alert alert-error" style="margin-left: 15px;">Name is required </span>
+    </div>
+    <ion-item>
+      <ion-label color="primary" floating>project</ion-label>
+      <ion-input formControlName="project"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" floating>Work Yesterday</ion-label>
+      <ion-input formControlName="workYesterday"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" floating>Work Today</ion-label>
+      <ion-input formControlName="workToday"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" floating>Impediments</ion-label>
+      <ion-input formControlName="Impediments"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" floating>Discount</ion-label>
+      <ion-input formControlName="discount"></ion-input>
+    </ion-item>
+    
+    <button ion-button style="margin-left: 15px;
+    margin-top: 53px;">Save
+    </button>
+    
+  </form>  
+</ion-content>

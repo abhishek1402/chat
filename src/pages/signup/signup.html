@@ -1,0 +1,68 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>signup</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="signupForm" >
+    <ion-item>
+        <ion-label color="primary" floating>Email adress</ion-label>
+        <ion-input formControlName="email" value="a@a.com"></ion-input>
+    </ion-item>
+
+     <div *ngIf="email.touched && email.invalid">
+      <span item-start  class="alert alert-error" style="margin-left: 15px;">Email is required </span>
+      <div *ngIf="email.errors.EmailValidity">
+        <span item-start  class="alert alert-error" style="margin-left: 15px;">Not a valid email</span>
+      </div>
+    </div>
+
+    <ion-item>
+        <ion-label color="primary" floating>Name</ion-label>
+        <ion-input formControlName="name" (blur)="log(signupForm)"></ion-input>
+    </ion-item>
+    <div *ngIf="name.touched && name.invalid">
+      <span item-start  class="alert alert-error" style="margin-left: 15px;">name is required </span>
+      
+    </div>
+
+    <ion-item>
+        <ion-label color="primary" floating>Number</ion-label>
+        <ion-input formControlName="number" ></ion-input>
+    </ion-item>
+    
+    <div *ngIf="number.touched && number.invalid">
+      <span item-start  class="alert alert-error" (blur)="log(number)" style="margin-left: 15px;">number is required </span>
+      <div *ngIf="number.errors.pattern">
+         <span item-start  class="alert alert-error" (blur)="log(number)" style="margin-left: 15px;">number should be integer </span>
+      </div> 
+    </div>
+
+    <ion-item>
+      <ion-label color="primary" floating>Password</ion-label>
+      <ion-input formControlName="password" value ="a"></ion-input>
+    </ion-item>
+    <div *ngIf="password.touched && password.invalid">
+      <span item-start  class="alert alert-error" style="margin-left: 15px;">number is required </span>
+      
+    </div> 
+    
+    <div style="margin-top:10px;margin-left:13px" >
+      <button type ="submit" ion-button [disabled] = "!signupForm.valid" side="right"  (click)="submit(signupForm.value)">Signup
+      </button>
+    </div>
+
+    
+  
+  </form>  
+</ion-content>

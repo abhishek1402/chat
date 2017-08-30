@@ -1,0 +1,22 @@
+.sent{
+    background :#488aff;
+    width: 80%;
+    border-radius: 25px;
+    margin-top: 5px
+}
+.recieved{
+    background :#32db64;
+    width: 80%;
+    border-radius: 25px;
+    margin-left: 20%;
+    margin-top: 5px
+}
+.sent:after{
+    border: .5em solid #FFBB73;
+    border-color: #FFBB73 transparent transparent #FFBB73;
+    top: .5em;
+    right: -1em;
+}
+.scroll-content{
+    overflow: hidden
+}
