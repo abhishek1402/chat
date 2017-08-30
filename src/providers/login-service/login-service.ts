@@ -25,7 +25,7 @@ export class LoginServiceProvider {
 
     const headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post(urlClass.url+"/login",value,{headers:headers})
+    return this.http.post("http://ec2-52-207-64-40.compute-1.amazonaws.com:3000/login",value,{headers:headers})
     .catch((err:Response)=>{
       if(err.status==404){
         return Observable.throw(new NotFoundError())
